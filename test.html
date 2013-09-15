@@ -29,9 +29,9 @@ text.active {
 
 <script>
 
-var margin = {top: 180, right: 0, bottom: 10, left:180},
-    width = 1500,
-    height = 1500;
+var margin = {top: 180, right: 0, bottom: 10, left:150},
+    width = 1100,
+    height = 1100;
 
 var x = d3.scale.ordinal().rangeBands([0, width]),
     z = d3.scale.linear().domain([0, 50]).clamp(true),
@@ -126,6 +126,7 @@ d3.json("groups.json", function(miserables) {
       .attr("x2", width);
 
   row.append("text")
+      .attr("font-size", "8px")
       .attr("x", -6)
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")
@@ -142,6 +143,7 @@ d3.json("groups.json", function(miserables) {
       .attr("x1", -width);
 
   column.append("text")
+      .attr("font-size", "8px")
       .attr("x", 6)
       .attr("y", x.rangeBand() / 2)
       .attr("dy", ".32em")
